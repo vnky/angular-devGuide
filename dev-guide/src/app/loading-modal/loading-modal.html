@@ -1,0 +1,52 @@
+<div class="loading-modal-host">
+  <button type="button" class="open-btn" (click)="openModal()">Open modal with loading</button>
+
+  @if (isOpen()) {
+    <div class="backdrop" (click)="closeModal()" aria-hidden="true"></div>
+    <div
+      class="dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="loading-modal-title"
+      (click)="$event.stopPropagation()"
+    >
+      <header class="dialog-header">
+        <h2 id="loading-modal-title">Blog posts (DummyJSON)</h2>
+        <button type="button" class="icon-btn" (click)="closeModal()" aria-label="Close">×</button>
+      </header>
+
+      <div class="dialog-body">
+        @if (isLoading()) {
+          <p class="status">{{ statusMessage() }}</p>
+          <div class="progress-track" aria-label="Loading progress">
+            <div class="progress-fill" [style.width.%]="progress()"></div>
+          </div>
+          <p class="progress-label">{{ progress() }}%</p>
+          <ul class="skeleton-list" aria-hidden="true">
+            @for (row of [1, 2, 3]; track row) {
+              <li class="skeleton-row"></li>
+            }
+          </ul>
+        } @else if (error()) {
+          <p class="status error">{{ error() }}</p>
+          <button type="button" class="secondary-btn" (click)="reloadInModal()">Retry</button>
+        } @else {
+          <p class="status done">{{ statusMessage() }}</p>
+          <ul class="result-list">
+            @for (post of posts(); track post.id) {
+              <li class="post-card">
+                <h3>{{ post.title }}</h3>
+                <p class="excerpt">{{ post.body }}</p>
+                <p class="meta">
+                  👍 {{ post.reactions.likes }}
+                  · Tags: {{ post.tags.join(', ') }}
+                </p>
+              </li>
+            }
+          </ul>
+          <button type="button" class="secondary-btn" (click)="reloadInModal()">Load again</button>
+        }
+      </div>
+    </div>
+  }
+</div>

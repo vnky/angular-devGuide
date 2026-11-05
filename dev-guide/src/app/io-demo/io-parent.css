@@ -1,0 +1,33 @@
+.io-parent {
+  padding: 1.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #f9fafb;
+  max-width: 28rem;
+}
+
+.io-parent h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+}
+
+.io-parent p {
+  margin: 0.35rem 0;
+}
+
+.event {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 1rem !important;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: #059669;
+  color: #fff;
+  margin-right: 0.35rem;
+}

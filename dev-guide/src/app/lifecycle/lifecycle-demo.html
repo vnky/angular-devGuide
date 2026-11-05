@@ -1,0 +1,59 @@
+<section class="lifecycle-page">
+  <header>
+    <h1>Angular component lifecycle</h1>
+    <p>
+      Hooks run in a fixed order when a component is created, checked, and destroyed. Use the
+      controls below to trigger <code>ngOnChanges</code> and <code>ngOnDestroy</code>, then watch
+      the live log. Navigate to <strong>Home</strong> to see route-level
+      <code>ngOnDestroy</code> in the browser console.
+    </p>
+  </header>
+
+  <div class="guide-grid">
+    @for (item of hooksGuide; track item.name) {
+      <article class="guide-card">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.when }}</p>
+      </article>
+    }
+  </div>
+
+  <section class="controls">
+    <label>
+      Change @Input (fires ngOnChanges on child)
+      <input
+        type="text"
+        [value]="message()"
+        (input)="updateMessage($any($event.target).value)"
+      />
+    </label>
+    <button type="button" (click)="toggleProbe()">
+      {{ showProbe() ? 'Destroy child' : 'Create child' }} (ngOnDestroy / re-init)
+    </button>
+    <button type="button" class="muted" (click)="clearLogs()">Clear log</button>
+  </section>
+
+  @if (showProbe()) {
+    <app-lifecycle-probe [message]="message()" (hookLogged)="onHookLogged($event)">
+      <p class="projected">Projected content for content hooks</p>
+    </app-lifecycle-probe>
+  }
+
+  <section class="log-panel">
+    <h2>Live hook log</h2>
+    @if (logs().length === 0) {
+      <p class="empty">Interact with the controls to see lifecycle events.</p>
+    } @else {
+      <ul>
+        @for (entry of logs(); track $index) {
+          <li>
+            <span class="time">{{ entry.time }}</span>
+            <span class="source">{{ entry.source }}</span>
+            <span class="hook">{{ entry.hook }}</span>
+            <span class="detail">{{ entry.detail }}</span>
+          </li>
+        }
+      </ul>
+    }
+  </section>
+</section>

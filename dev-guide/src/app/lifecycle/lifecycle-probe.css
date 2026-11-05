@@ -1,0 +1,12 @@
+.probe {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px dashed #6366f1;
+  border-radius: 8px;
+  background: #eef2ff;
+  font-size: 0.9rem;
+}
+
+.probe p {
+  margin: 0;
+}

@@ -1,0 +1,153 @@
+.lifecycle-page {
+  padding: 1.25rem;
+  max-width: 56rem;
+  color: #111827;
+}
+
+header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0 0 1.25rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.guide-card {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.guide-card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  color: #4338ca;
+}
+
+.guide-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.controls input {
+  min-width: 16rem;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.controls button {
+  cursor: pointer;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #fff;
+  font-weight: 600;
+}
+
+.controls button.muted {
+  background: #fff;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.projected {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: #4338ca;
+}
+
+.log-panel {
+  margin-top: 1.25rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.log-panel h2 {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  font-size: 1rem;
+  background: #111827;
+  color: #f9fafb;
+}
+
+.log-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
+.log-panel li {
+  display: grid;
+  grid-template-columns: 5rem 10rem 11rem 1fr;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.8rem;
+}
+
+.log-panel li:nth-child(even) {
+  background: #f9fafb;
+}
+
+.time {
+  color: #6b7280;
+}
+
+.source {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.hook {
+  color: #0369a1;
+  font-weight: 600;
+}
+
+.detail {
+  color: #374151;
+}
+
+.empty {
+  margin: 0;
+  padding: 1rem 0.85rem;
+  color: #6b7280;
+}
+
+@media (max-width: 720px) {
+  .log-panel li {
+    grid-template-columns: 1fr;
+  }
+}

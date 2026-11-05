@@ -1,0 +1,13 @@
+<section class="io-parent">
+  <h2>Parent component</h2>
+  <p>Title in parent: <strong>{{ title() }}</strong></p>
+  <p>Score in parent: <strong>{{ score() }}</strong></p>
+  <p class="event"><span class="tag">@Output</span> {{ lastEvent() }}</p>
+
+  <app-io-child
+    [title]="title()"
+    [score]="score()"
+    (scoreChange)="onScoreChange($event)"
+    (liked)="onLiked($event)"
+  />
+</section>

@@ -1,0 +1,46 @@
+.io-child {
+  padding: 1rem 1.25rem;
+  border: 1px solid #c7d2fe;
+  border-radius: 8px;
+  background: #eef2ff;
+}
+
+.io-child h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.io-child p {
+  margin: 0.35rem 0;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  background: #4338ca;
+  color: #fff;
+  margin-right: 0.35rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.actions button {
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #6366f1;
+  background: #fff;
+  color: #3730a3;
+}
+
+.actions button:hover {
+  background: #e0e7ff;
+}

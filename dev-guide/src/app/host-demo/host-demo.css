@@ -1,0 +1,68 @@
+.host-page {
+  padding: 1.25rem;
+  max-width: 40rem;
+  color: #111827;
+}
+
+header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0 0 1.25rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.concepts {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.concepts article {
+  padding: 0.85rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.concepts h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: #4338ca;
+}
+
+.concepts p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.try-it h2,
+.snippet h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.try-it p {
+  margin: 0 0 0.75rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.snippet {
+  margin-top: 1.25rem;
+}
+
+.snippet pre {
+  margin: 0.5rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  background: #111827;
+  color: #e5e7eb;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}

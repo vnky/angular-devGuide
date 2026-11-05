@@ -1,0 +1,9 @@
+<section class="io-child">
+  <h3>Child component</h3>
+  <p><span class="tag">@Input</span> title: <strong>{{ title }}</strong></p>
+  <p><span class="tag">@Input</span> score: <strong>{{ score }}</strong></p>
+  <div class="actions">
+    <button type="button" (click)="increment()">Emit scoreChange (+1)</button>
+    <button type="button" (click)="sendLike()">Emit liked</button>
+  </div>
+</section>

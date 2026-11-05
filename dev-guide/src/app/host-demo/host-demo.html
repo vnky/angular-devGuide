@@ -1,0 +1,45 @@
+<section class="host-page">
+  <header>
+    <h1>@HostListener &amp; @HostBinding</h1>
+    <p>
+      Every component has a <strong>host element</strong> (here: <code>&lt;app-host-card&gt;</code>).
+      These decorators talk to that outer tag without extra wrapper divs.
+    </p>
+  </header>
+
+  <div class="concepts">
+    <article>
+      <h2>@HostBinding</h2>
+      <p>
+        <strong>Sets a property on the host.</strong> Classes, attributes, or styles on
+        <code>&lt;app-host-card&gt;</code> — for example <code>class.is-hovered</code> or
+        <code>aria-label</code>.
+      </p>
+    </article>
+    <article>
+      <h2>@HostListener</h2>
+      <p>
+        <strong>Listens to events on the host.</strong> Same as adding
+        <code>(click)</code> on the component tag in a parent, but defined inside the component
+        class (e.g. <code>click</code>, <code>mouseenter</code>).
+      </p>
+    </article>
+  </div>
+
+  <section class="try-it">
+    <h2>Try it</h2>
+    <p>Hover, click, and press the card. Inspect the element in DevTools to see host classes change.</p>
+    <app-host-card />
+  </section>
+
+  <section class="snippet">
+    <h2>Minimal example</h2>
+    <pre><code>@HostBinding('class.active') isActive = false;
+
+@HostListener('mouseenter')
+onEnter() &#123; this.isActive = true; &#125;
+
+@HostListener('mouseleave')
+onLeave() &#123; this.isActive = false; &#125;</code></pre>
+  </section>
+</section>
