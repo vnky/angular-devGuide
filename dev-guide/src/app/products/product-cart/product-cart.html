@@ -1,0 +1,82 @@
+<section class="cart-page">
+  <header class="cart-page-header">
+    <h1>Shopping Cart</h1>
+  </header>
+
+  <div class="cart-layout">
+    <div class="cart-lines">
+      @if (cart.lines().length === 0) {
+        <div class="empty-cart">
+          <mat-icon>shopping_cart</mat-icon>
+          <p>Your cart is empty.</p>
+          <a matButton routerLink="/">Browse products</a>
+        </div>
+      } @else {
+        @for (line of cart.lines(); track line.product.id) {
+          <article class="cart-line">
+            <img [src]="line.product.imageUrl" [alt]="line.product.name" width="120" height="120" />
+
+            <div class="cart-line-details">
+              <h2>{{ line.product.name }}</h2>
+              <p>{{ line.product.description }}</p>
+              <p class="unit-price">{{ line.product.price | currency }}</p>
+            </div>
+
+            <div class="cart-line-actions">
+              <mat-form-field appearance="outline" class="qty-field">
+                <mat-label>Qty</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  min="1"
+                  [ngModel]="line.quantity"
+                  (ngModelChange)="onQuantityChange(line.product.id, $event)"
+                />
+              </mat-form-field>
+
+              <p class="line-total">{{ line.lineTotal | currency }}</p>
+
+              <button
+                matIconButton
+                type="button"
+                aria-label="Remove item"
+                (click)="cart.removeItem(line.product.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </article>
+        }
+      }
+    </div>
+
+    <aside class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-row">
+        <span>Items ({{ cart.itemCount() }})</span>
+        <span>{{ cart.subtotal() | currency }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax</span>
+        <span>{{ cart.tax() | currency }}</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>{{ cart.total() | currency }}</span>
+      </div>
+
+      <button matButton class="checkout-btn" type="button" [disabled]="cart.lines().length === 0">
+        Proceed to Checkout
+      </button>
+      <button
+        matButton
+        class="clear-btn"
+        type="button"
+        [disabled]="cart.lines().length === 0"
+        (click)="cart.clearCart()"
+      >
+        Clear Cart
+      </button>
+    </aside>
+  </div>
+</section>

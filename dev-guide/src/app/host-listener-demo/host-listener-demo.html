@@ -1,0 +1,44 @@
+<section class="host-listener-page">
+  <header>
+    <h1>&#64;HostListener</h1>
+    <p>
+      <code>&#64;HostListener</code> registers a method on the component’s <strong>host element</strong>
+      (or on <code>document</code>, <code>window</code>, etc.) so you keep DOM wiring in the class instead
+      of repeating <code>(event)</code> in every parent template.
+    </p>
+  </header>
+
+  <article class="point">
+    <h2>Host target (default)</h2>
+    <p>
+      <code>&#64;HostListener('click')</code> runs when the user interacts with
+      <code>&lt;app-host-event-zone&gt;</code> — the outer DOM node Angular creates for this component.
+    </p>
+    <app-host-event-zone />
+    <p class="tip">Tab to focus the zone, then press letter keys — <code>keydown</code> is also on the host.</p>
+  </article>
+
+  <article class="point">
+    <h2>Global target</h2>
+    <p>
+      <code>&#64;HostListener('window:scroll')</code> listens on the window. Useful for scroll-spy headers
+      or infinite scroll — still declared on the component class.
+    </p>
+    <app-window-scroll-badge />
+    <p class="tip">Scroll the page to see the counter increase.</p>
+  </article>
+
+  <article class="point compare">
+    <h2>Compared to the template</h2>
+    <pre><code>&lt;app-my-widget (click)="onClick($event)" /&gt;
+
+&lt;!-- same idea, but inside the widget class: --&gt;
+
+&#64;HostListener('click', ['$event'])
+onClick(event: MouseEvent) &#123; ... &#125;</code></pre>
+  </article>
+
+  <p class="also">
+    See also <a routerLink="/host">/host</a> for <code>&#64;HostBinding</code> together with listeners.
+  </p>
+</section>

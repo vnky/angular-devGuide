@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 2px solid #6366f1;
+  border-radius: 8px;
+  background: #eef2ff;
+  outline: none;
+  cursor: default;
+}
+
+:host(:focus-visible) {
+  box-shadow: 0 0 0 3px rgb(99 102 241 / 0.45);
+}
+
+p {
+  margin: 0.35rem 0;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #4338ca;
+}
+
+code {
+  background: #e0e7ff;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}

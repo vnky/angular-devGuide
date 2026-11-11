@@ -1,0 +1,20 @@
+<section class="counter">
+  <h1>Signal counter</h1>
+  <p class="value">{{ count() }}</p>
+  <p class="meta">State: <strong>{{ label() }}</strong></p>
+  <p class="meta">Double: <strong>{{ doubleCount() }}</strong> · Triple: <strong>{{ tripleCount() }}</strong></p>
+  <p class="meta chain">summary depends on label and doubleCount: <strong>{{ summary() }}</strong></p>
+
+  <div class="actions">
+    <button type="button" (click)="decrement()">−</button>
+    <button type="button" (click)="reset()">Reset</button>
+    <button type="button" (click)="increment()">+</button>
+  </div>
+
+  <aside class="effect-panel">
+    <h2><code>effect</code></h2>
+    <p>Runs when <code>count()</code> (and <code>label()</code> read inside) changes.</p>
+    <p><strong>{{ effectMessage() }}</strong></p>
+    <p class="meta">Times executed: {{ effectRuns() }} (includes initial run)</p>
+  </aside>
+</section>

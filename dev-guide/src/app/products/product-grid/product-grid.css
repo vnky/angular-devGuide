@@ -1,0 +1,23 @@
+.products-container {
+  padding: 1rem 1.25rem 2rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.search-field {
+  width: min(100%, 24rem);
+  margin-bottom: 1rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #6b7280;
+  padding: 2rem;
+}

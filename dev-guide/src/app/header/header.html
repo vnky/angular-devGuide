@@ -1,0 +1,27 @@
+<mat-toolbar class="main-header">
+  <a matButton routerLink="/" aria-label="Home">
+    <mat-icon aria-hidden="true">store</mat-icon>
+  </a>
+
+  <span class="branding">Angular Shop</span>
+
+  <span class="spacer"></span>
+
+  <a matButton routerLink="/" routerLinkActive="active-nav" [routerLinkActiveOptions]="{ exact: true }">
+    Products
+  </a>
+
+  <a matButton routerLink="/host-listener" routerLinkActive="active-nav">HostListener</a>
+
+  <a
+    matButton
+    routerLink="/cart"
+    routerLinkActive="active-nav"
+    aria-label="Shopping cart"
+    [matBadge]="cart.itemCount()"
+    matBadgeColor="warn"
+    [matBadgeHidden]="cart.itemCount() === 0"
+  >
+    <mat-icon aria-hidden="true">shopping_cart</mat-icon>
+  </a>
+</mat-toolbar>

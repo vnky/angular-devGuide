@@ -1,0 +1,59 @@
+.host-listener-page {
+  padding: 1.25rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0 0 1.25rem;
+  color: #4b5563;
+  line-height: 1.55;
+}
+
+.point {
+  margin-bottom: 1.5rem;
+}
+
+.point h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: #4338ca;
+}
+
+.point > p {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.tip {
+  margin-top: 0.75rem !important;
+  font-size: 0.85rem !important;
+  color: #6b7280 !important;
+}
+
+.compare pre {
+  margin: 0.5rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  background: #111827;
+  color: #e5e7eb;
+  overflow-x: auto;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.also {
+  margin: 1.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.also a {
+  color: #4f46e5;
+  font-weight: 600;
+}
